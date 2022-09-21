@@ -7,11 +7,22 @@
     <title>Data Mobile legend</title>
 </head>
 <body>
-    <h1 id="now"></h1>
+  <input id="user_email">
+    <button id="notif">
+        input 
+    </button>
+    <p id="now"></p>
     <script>
         let tanggal_hari_ini_ = new Date(Date.now()),
             now = document.getElementById("now")
           now.innerHTML = tanggal_hari_ini_.toLocaleDateString()
+    </script>
+    <script>
+        let notif = document.getElementById("notif")
+        notif.onclick = function(){
+            let user_email = document.getElementById("user_email").value
+            alert("kami akan memberikan notifikasi ke "+user_email+". Terimakasih")
+        }
     </script>
 </body>
 </html>
