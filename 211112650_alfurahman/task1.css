@@ -1,0 +1,37 @@
+body {
+    background-color: lightgreen;
+    padding: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: large;
+}
+h1 {
+    font-family: 'Akshar', sans-serif;
+    color: red;
+    font-size: 80px;
+}
+#notif {
+    background-color: #3498DB;
+    border: none;
+    color:#fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border-bottom: 5px solid #2980b9;
+    text-align: center;
+    font-size: 15px;
+    margin: 15px 60px;
+    cursor: pointer;
+    text-shadow: 0px -2px #2980B9;
+    font-family: 'pacifico',cursive;
+}
+#notif:hover{
+    background-color: beige;
+    color: black;
+}
+#user_email {
+    background-image: white;
+    margin: 0 auto;
+    padding: 9px;
+    width: 350px;
+    border-radius: 2%;
+}
