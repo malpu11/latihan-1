@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Mobile legend</title>
+    <title>mobile legend bangbang</title>
+    <link rel="stylesheet" href="task.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <input id="user_email">
-    <button id="notif">
-        input 
-    </button>
-    <p id="now"></p>
-    <script>
-        let tanggal_hari_ini_ = new Date(Date.now()),
-            now = document.getElementById("now")
-          now.innerHTML = tanggal_hari_ini_.toLocaleDateString()
-    </script>
-    <script>
-        let notif = document.getElementById("notif")
-        notif.onclick = function(){
-            let user_email = document.getElementById("user_email").value
-            alert("kami akan memberikan notifikasi ke "+user_email+". Terimakasih")
-        }
-    </script>
+    <div>
+        <h1>Punny Web</h1>
+            <h2>Website akan dapat segera di akses lengkap</h2>
+            <h2>Pada : 10/10/2021</h2>
+            <h2 id="now"></h2>
+    <input id="user_email">
+    <br>
+    <button id="notif">Get Notification</button>
+    </div>
+        <script>
+            let notif = document.getElementById("notif")
+            notif.onclick = function(){
+                let user_email = document.getElementById("user_email").value
+                alert("kami akan memberikan notifikasi ke "+user_email+". Terimakasih")
+            }
+                let tanggal_hari_ini_ = new Date(Date.now()),
+                    now = document.getElementById("now")
+                now.innerHTML = tanggal_hari_ini_.toLocaleDateString()
+        </script>
 </body>
 </html>
