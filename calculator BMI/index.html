@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+<body>
+    <div id="box">
+        <h1>kalkulator BMI</h1>
+        <br>
+        
+        <p>Tinggi Badan : </p>
+            <input type="text" id="t">
+
+        <p>Berat Badan : </p>
+            <input type="text" id="b">
+        <p id="text"></p>
+        <button id="btn" onclick="BMI()">Hitung</button>
+    </div>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(120deg,black,rgb(255, 0, 0),#ff6b6b,#5f27cd,black);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+p{
+    font-family: monospace;
+    color: black;
+}
+h1{
+    color: black;
+    font-family: monospace;
+    border-bottom: 5px solid red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 500px;
+    background-color: rgb(252, 240, 146);
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px black;
+    padding: 30px;
+    font-size: 20px;
+}
+#box input{
+    display: block;
+    width: 50%;
+    height: 40px;
+    background-color: transparent;
+    margin: 10px 100px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+#box input:hover{
+    position: relative;
+    background-color: white;
+    font-size: large;
+}
+#box button{
+    position: block;
+    background-image: linear-gradient(120deg,rgb(255, 0, 0),#ff6b6b,#5f27cd);
+    border: none;
+    color:#fff;
+    padding: 10px 90px;
+    border-radius: 20px;
+    border-bottom: 5px solid white;
+    font-size: 15px;
+    margin: 40px 100px;
+    cursor: pointer;
+    text-shadow: 0px -2px red;
+    font-family: 'pacifico',cursive;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+#box button:hover{
+    background-image: linear-gradient(120deg,#5f27cd,#ff6b6b,rgb(255, 0, 0));
+    color: black;
+    text-shadow: none;
+    border-bottom: 5px solid rgb(234, 107, 128);
+    transition: all 0.5s;
+}
+    </style>
+    <script type="text/javascript">
+        function BMI() {
+            var t = document.getElementById('t').value;
+            var b = document.getElementById('b').value;
+            var bmi=b/(t/100*t/100);
+            var bmi1=(bmi.toFixed(2));
+
+            if(bmi1 < 18.6){
+                var grade="berat badan kurang : " + bmi1
+            }
+            else if(bmi1 >= 18.6 && bmi1 < 24.9){
+                var grade="Normal : " + bmi1
+            }
+            else{
+                var grade="obesitas : " + bmi1
+            }
+
+            document.getElementById('text').innerHTML="Your BMI is " + grade;
+        }
+    </script>
+</body>
+</html>
+<!-- <script src="C:\coding\vscode\alfu\calculator BMI\index.js"></script> -->
