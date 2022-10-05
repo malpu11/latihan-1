@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        background-image: linear-gradient(to top, #f84f23, #ff3874, #ee54ba, #b07aec, #4a96fe);
+        text-align: center;
+        color: white;
+    }
+    h1{
+        font-size: 70px;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    h2{
+        text-decoration: underline;
+    }
+    #gambar{
+        width: 400px;
+        padding-top: 20px;
+    }
+</style>
+<body>
+    <h1>Punny Web</h1>
+    <h2 id="author"></h2>
+    <img src="" id="gambar"></img>
+    <script>
+        let show = function (data) {
+            let arr = JSON.parse(data);
+            arr = arr[0];
+            document.getElementById("gambar").src = arr.download_url;
+            document.getElementById("author").innerHTML = arr.author;
+        }
+        let load = function () {
+            let link = "https://picsum.photos/v2/list?page=2&limit=1";
+            let xhr;
+            xhr = new XMLHttpRequest();
+            try {
+                xhr = new XMLHttpRequest();
+                if (!xhr) return -1;
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    show(xhr.responseText);
+                }    
+            };
+        xhr.open('GET', link);
+        xhr.send();
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+    load();
+    </script>
+</body>
+</html>
